@@ -1,4 +1,6 @@
 require_relative '../config/environment.rb'
+require 'rest-client'
+require 'json'
 
 def get_people
     people = RestClient.get('https://ghibliapi.herokuapp.com/people')
