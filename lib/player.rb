@@ -2,6 +2,8 @@ class Player < ActiveRecord::Base
     has_many :reviews
     has_many :games, through: :reviews
 
+    ##id: INTEGER PRIMARY KEY, name: TEXT
+   
     # def write_or_update_review
     # end
     
