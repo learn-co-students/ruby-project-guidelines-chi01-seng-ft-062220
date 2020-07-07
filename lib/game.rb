@@ -6,8 +6,14 @@ class Game < ActiveRecord::Base
 
 
     # def list_by_type(type)
+        #pull type from game and match type 
+        #map through array and print array of games  
     # end    
 
     # def ordered_by_rating
+        #pull from reviews and sort ratings from best to worse
     # end 
+
+    #def random_game
+    #end
 end
