@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 3) do
 
   create_table "games", force: :cascade do |t|
     t.text "name"
-    t.text "type"
+    t.text "game_type"
   end
 
   create_table "players", force: :cascade do |t|
