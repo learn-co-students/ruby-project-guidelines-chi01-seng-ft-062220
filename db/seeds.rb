@@ -48,5 +48,7 @@ def creator
     connected.first(10)
 end
 
+creator
 
-binding.pry
+
+# binding.pry

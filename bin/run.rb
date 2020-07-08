@@ -1,7 +1,5 @@
 require_relative '../config/environment'
 
+a = Person.new(id: "okay", title: "this", director: "is", people: "a", species: "test")
 
-
-puts "HELLO WORLD"
-
-puts "hello matt"
+puts a
