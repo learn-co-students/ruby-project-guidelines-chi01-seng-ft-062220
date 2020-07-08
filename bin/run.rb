@@ -1,10 +1,21 @@
 require_relative '../config/environment'
 
 'names?
-    top shelf
-    your turn!
+    Top Shelf
+    Your Turn!
+    Go Fish
+    Dragon''s Hoard
+    Pile of Games
+    House Rule (I like this one a lot)
+    Life Points
+    Great Gaming Reef
+    Metagame
+    Rage Quit
+    Endless Setup
+    Mana Burn
+    The Paper Dragon
 
-welcome!
+welcome! Let''s setup.
     existing player
         find player == name
     new player
@@ -46,7 +57,7 @@ main menu: what would you like to do? (whos turn is it?)
         Game.top_three_games
         automatically puts you back in main menu?
                 should we pick either top 3 or top game? maybe we can put top game on the welcome screen?
-                
+
     top game
         Game.top_three_games
         automatically puts you back in main menu?
