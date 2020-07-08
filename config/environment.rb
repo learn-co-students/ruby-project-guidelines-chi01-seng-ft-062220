@@ -6,6 +6,4 @@ ActiveRecord::Base.establish_connection(
     database: 'db/development.db'
 )
 
-
 require_all 'app'
-require_all 'app/models'
