@@ -1,6 +1,6 @@
 class Game < ActiveRecord::Base
-    has_many :reviews
-    has_many :players, through: :reviews
+    has_many :review
+    has_many :player, through: :review
 
     def self.list_by_type(type)
         self.all.select do |game|
