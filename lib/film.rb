@@ -17,4 +17,9 @@ class Film < ActiveRecord::Base
         end
         title
     end
+
+    def list_characters
+        search = Person.where(film_id: self.id) 
+        search.map{|info| "#{info.name} - #{info.species.name}"}
+    end
 end

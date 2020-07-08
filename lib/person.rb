@@ -7,5 +7,6 @@ class Person < ActiveRecord::Base
         people = JSON.parse(people)
         people
     end    
+    
 end
 
