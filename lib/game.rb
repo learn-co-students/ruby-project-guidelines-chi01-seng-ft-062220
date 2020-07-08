@@ -17,6 +17,8 @@ class Game < ActiveRecord::Base
     
     def self.ordered_by_rating
         sorted_games = Review.all.map { |r| r[:rating] }.sort.reverse!
+        #so far this creates an array with all of the ratings starting from 5, how do i get it to include the game's name?
+
         # sorted_games = Review.all.each do |player, game, review, rating|
         #     puts "#{game} #{rating}"
         # end
