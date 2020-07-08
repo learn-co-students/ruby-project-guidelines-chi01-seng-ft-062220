@@ -3,13 +3,13 @@ class Player < ActiveRecord::Base
     has_many :game, through: :review
    
     def my_reviews
-        self.review
+        self.review.map{|key| key.player_review}
     end
 
-    def find_my_game
-        self.game.map{|key| key.name}
+    def find_my_games
+        self.game.map{|key| key.name}.uniq
     end
-    
+
     def write_review(game, review, rate)
         #error uninitialized constant Player::Games
         Review.new(player_id: self.id, game_id: games.id, player_review: review, rating: rate)
