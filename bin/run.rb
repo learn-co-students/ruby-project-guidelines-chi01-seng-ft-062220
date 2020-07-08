@@ -2,5 +2,4 @@ require_relative '../config/environment'
 
 
 
-
-puts "hello tenaysia 2020"
+puts "new message"
