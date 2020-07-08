@@ -1,4 +1,5 @@
 require_relative '../config/environment'
+
 ActiveRecord::Base.logger = nil
 
 Game.delete_all
@@ -59,3 +60,6 @@ review12 = Review.create(id: 12, player_id: 6, game_id: 3, player_review: "If an
 
 
 binding.pry
+
+
+puts "hello"
