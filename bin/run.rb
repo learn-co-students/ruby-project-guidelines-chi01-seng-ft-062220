@@ -24,7 +24,7 @@ welcome! Let''s setup.
 main menu: what would you like to do? (whos turn is it?)
 
     my reviews
-        puts >Review.all == self
+        (Review.all == self)
         new options:
             write a review of a game (should this be in main menu?)
                 Review.new
@@ -32,14 +32,14 @@ main menu: what would you like to do? (whos turn is it?)
                 Review.x.delete
             edit? a review of a game
                 Review.x.edit
-            back to main menu
-                cd . main menu (idk how to do that)
             delete all games :O
                 Review.all.player_id == self delete
-                puts 'cleared the board'
+                puts "cleared the board"
+            back to main menu
+                cd . main menu (idk how to do that)
 
     my games
-        puts >Review.all==self : game name 
+        (Review.all==self : game name )
         new options:
             write a review of a game (should this be in main menu?)
                 Review.new
@@ -47,11 +47,15 @@ main menu: what would you like to do? (whos turn is it?)
                 Review.x.delete
             edit? a review of a game
                 Review.x.edit
+            delete all games :O
+                Review.all.player_id == self delete
+                puts "cleared the board"
             back to main menu
                 cd . main menu (idk how to do that)
-            delete all games :O
-                    Review.all.player_id == self delete
-                    puts 'cleared the board'
+
+    write a review
+        Review.new
+        back to main menu
 
     top 3 games
         Game.top_three_games
