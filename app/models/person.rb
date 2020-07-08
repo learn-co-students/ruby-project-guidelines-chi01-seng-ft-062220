@@ -1,4 +1,5 @@
-class CreatePeople < ActiveRecord::Migration[5.2]
+
+class Person < ActiveRecord::Base
 
     def change
 
@@ -9,7 +10,7 @@ class CreatePeople < ActiveRecord::Migration[5.2]
             t.string :people
             t.string :species
         end
-    
+
     end
-    
+
 end

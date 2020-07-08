@@ -1,14 +1,5 @@
 require_relative '../config/environment'
 
+a = Person.new(id: "okay", title: "this", director: "is", people: "a", species: "test")
 
-
-def films_with_people
-    films = get_films
-    films.select do |film|
-        film["people"].length > 1
-    end
-end
-
-films = films_with_people
-
-puts films.length
+puts a

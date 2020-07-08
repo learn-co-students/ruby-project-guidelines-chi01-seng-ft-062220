@@ -1,16 +1,8 @@
 
-class CreateFilms < ActiveRecord::Migration[5.2]
+class Film < ActiveRecord::Base
 
     def change
-
-        create_table :films do |t|
-            t.string :ghibli_id
-            t.string :title
-            t.string :director
-            t.string :people
-            t.string :species
-        end
-    
+        add_column :ghibli_id, :title, :director, :people, :species
     end
     
 end
