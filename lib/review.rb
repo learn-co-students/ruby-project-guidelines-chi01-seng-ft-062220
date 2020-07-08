@@ -1,6 +1,6 @@
 class Review < ActiveRecord::Base
-    belongs_to :players
-    belongs_to :games
+    belongs_to :player
+    belongs_to :game
 
     def self.top_rated_game
         self.all.sort_by { |r| r[:rating] }.reverse!.first
