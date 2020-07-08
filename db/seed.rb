@@ -1,6 +1,29 @@
-Game.destroy_all
-Player.destroy_all
-Review.destroy_all
+require_relative '../config/environment'
+ActiveRecord::Base.logger = nil
+
+Game.delete_all
+Player.delete_all
+Review.delete_all
+
+# catan = Game.create(name: "Catan", game_type: "Board")
+# monopoly = Game.create(name: "Monopoly", game_type: "Board")
+# pandemic = Game.create(name: "Pandemic", game_type: "Board")
+# dominion = Game.create(name: "Dominion", game_type: "Board")
+# fluxx = Game.create(name: "Fluxx", game_type: "Card Game")
+# go_fish = Game.create(name: "Go Fish", game_type: "Card Game")
+# nuts = Game.create(name: "Nuts!", game_type: "Card Game")
+# dungeons_dragons = Game.create(name: "Dungeons and Dragons", game_type: "RPG Game")
+# fate = Game.create(name: "Fate", game_type: "RPG Game")
+
+# adam = Player.create(name: "Adam")
+# brittany = Player.create(name: "Brittany")
+# clarence = Player.create(name: "Clarence")
+# derick = Player.create(name: "Derick")
+# eve = Player.create(name: "Eve")
+# fatima = Player.create(name: "Fatima")
+# greg = Player.create(name: "Greg")
+# haley = Player.create(name: "Haley")
+
 
 catan = Game.create(id: 1, name: "Catan", game_type: "Board")
 monopoly = Game.create(id: 2, name: "Monopoly", game_type: "Board")
@@ -35,4 +58,4 @@ review11 = Review.create(id: 11, player_id: 3, game_id: 8, player_review: "Too m
 review12 = Review.create(id: 12, player_id: 6, game_id: 3, player_review: "If anxiety was a game it would be this. Friends love it but it gets too real for me.", rating: 3)
 
 
-
+binding.pry

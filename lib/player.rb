@@ -4,22 +4,24 @@ class Player < ActiveRecord::Base
 
     ##id: INTEGER PRIMARY KEY, name: TEXT
    
-    def write_or_update_review
-
+    def write_review(game, review, rate)
+        Review.new(player_id: self.id, game_id: games.id, player_review: review, rating: rate)
     end
     
-    def delete_all_player_game
-
+    def delete_player_game(name)
+       
     end
     
-    def delete_game(game)
-        # taking a argument of a game and delete that game from array
-    end
-
-    def give_me_a_random_game
-    end
-
-    def all_my_games
-     
-    end
+    # def fall_my_games(name)
+    #     self.games.all.select {}
+    # end
 end
+
+
+
+
+
+ # def delete_game(game)
+    #     remove = self.games.find { |game| game.game_id == game}
+    #     remove.destroy 
+    # end
