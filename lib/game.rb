@@ -16,7 +16,11 @@ class Game < ActiveRecord::Base
     # end   
     
     def self.ordered_by_rating
-        Review.all.sort { |r| r[:rating] }.reverse!
+        sorted_games = Review.all.map { |r| r[:rating] }.sort.reverse!
+        # sorted_games = Review.all.each do |player, game, review, rating|
+        #     puts "#{game} #{rating}"
+        # end
+        # sorted_games
     end
 
     # def ordered_by_rating
