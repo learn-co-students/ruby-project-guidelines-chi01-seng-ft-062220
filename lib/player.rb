@@ -18,6 +18,10 @@ class Player < ActiveRecord::Base
     def write_review(game_id, review, rate)
         Review.create(player_id: self.id, game_id: game_id, player_review: review, rating: rate)
     end  
+
+    def update_review
+        
+    end    
 end
 
 
