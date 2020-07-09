@@ -10,6 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_07_09_161504) do
+
+  create_table "films", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.boolean "canon"
+  end
+
+  create_table "people", force: :cascade do |t|
+    t.string "name"
+    t.string "eye_color"
+    t.string "hair_color"
+    t.string "gender"
+    t.integer "age"
+    t.integer "type_id"
+    t.integer "film_id"
+    t.integer "user_id"
+    t.boolean "canon"
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.boolean "canon"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+  end
 
 end

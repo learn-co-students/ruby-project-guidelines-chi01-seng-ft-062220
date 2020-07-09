@@ -1,5 +1,3 @@
-require_relative '../config/environment'
-
 require 'tty/prompt'
 
 $prompt = TTY::Prompt.new
@@ -7,24 +5,22 @@ $prompt = TTY::Prompt.new
 def get_new_username
     puts "What should I call you?"
     print "> "
-    response = gets.chomp
-    if User.all.find_by(name: response)
-        puts "Oops, someone already has that name."
-        get_new_username()
-    else
-        $user = User.create(name: response)
-    end
-    # print "\e[2J\e[f"
-    puts "Welcome #{response}!"
+    name = gets.chomp
+    $user = User.create(name: name)
+    ## TODO Populate all canon=true people
+    print "\e[2J\e[f"
+    puts "Welcome!"
     sleep(1.5)
-    # select_film_menu()
+    select_film_menu
 end
+
 
 def welcome
     print "\e[2J\e[f"
     puts "Welcome to Studio Ghibli Character Builder!"
     sleep(1.5)
     response = $prompt.select("Are you new here?", "Yes", "No")
+
         case
             when response == "Yes"
                 get_new_username
@@ -33,35 +29,29 @@ def welcome
                 puts "What's your name?"
                 response = gets.chomp
 
-                if User.all.find_by(name: response)
-                        puts "Hi #{response}!"
-                        # select_film_menu
+                if User.all.find { |user| user.name == response }
+                        puts "Oops, someone already has that name."
+                        get_new_username()
+                elsif User.all.find { |user| user.name == response }
+                        $user = user
+                        puts "Hi #{$user.name}!"
+                        select_film_menu
                 else
                     puts "hmm... can't seem to find you"
-                    get_new_username
+                    get_new_username()
                 end
         end
 end
  
-welcome
+# welcome
+# Person.find_by(name: "Ashitaka").update(user_id: 8)
 
 def get_people_by_user
-    my_characters = Person.all.where(user_id: self.id)
-    my_characters.map do |info|
-        info.name
-    end
+    Person.all.find_by(user_id: self.id)
 end
 
 
-def get_types_by_films_of_user 
-    #title is confusing, but here's code to return the films for a user (will hve to see if self.id works when running)
-    def get_films_by_user
-        film_titles = []
-        finder.each do |info|
-           film_titles << Film.find_by(id: info.film_id).title
-        end
-        film_titles.uniq
-    end
+def get_types_by_films_of_user
     #should return a list of films associated with people belonging to current user
 
 end
@@ -136,6 +126,3 @@ def see_species
 end
 
 
-
-
-puts "new message"
