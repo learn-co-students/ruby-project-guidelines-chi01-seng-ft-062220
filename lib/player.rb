@@ -27,11 +27,13 @@ class Player < ActiveRecord::Base
         y = x.id
         game_review = self.reviews.find_by(game_id: y)
         game_review.destroy
+        self.games = self.games.filter {|my_game| my_game.name != game}
         # self.games = self.games.reject {|game| game.name == game}
         # self.games = self.games.reject do |game|
         #     game.name == x
         # end
         # x.destroy
+        # binding.pry
         puts "Removed!"
     end  
     
