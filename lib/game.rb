@@ -16,5 +16,9 @@ class Game < ActiveRecord::Base
         self.all.map do |key|
             key.name
         end    
-    end    
+    end 
+    
+    def game_review
+        self.reviews
+    end
 end

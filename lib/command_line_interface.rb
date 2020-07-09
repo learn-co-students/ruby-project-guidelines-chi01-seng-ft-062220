@@ -10,7 +10,6 @@ def game_intro
 end
 
 def player_info
-    #all done
     answer = $prompt.select("Are You a:", %w(current_player new_player))
         case
             when answer == "current_player"
@@ -31,7 +30,6 @@ def player_info
 end    
 
 def main_menu
-    #all done
         answer = $prompt.select("How Can I Help You?", %w(reviews games 
         suprise_me! exit))
         case
@@ -54,7 +52,7 @@ def main_menu
 end
 
 def review_menu
-    answer = $prompt.select("Do You Want To:", %w(my_review delete-reviews update_review))
+    answer = $prompt.select("Do You Want To:", %w(my_review delete-reviews update_review game_review))
     case 
         when answer == "my_review"
             print ">"
@@ -69,22 +67,24 @@ def review_menu
         #     print ">"
         #     puts 
         #     whats_next
+        # when answer == "game_review"
+        #     puts "What game?"
+        #     print ">"
+        #     game_name = gets.chomp
+        #     puts game_name.game_review
+        #     sleep 2 
+        #     whats_next
     end            
 end
 
 def game_menu
-    answer = $prompt.select("Do You Want To:", %w(top_game top_three_games game_by_type all_of_the_games best_to_worst delete_all_my_games))
+    answer = $prompt.select("Do You Want To:", %w(top_game game_by_type all_of_the_games my_games delete_all_my_games))
     case 
         when answer == "top_game"
             print ">"
             puts Review.top_rated_game
             sleep 2
-            whats_next
-        when answer == "top_three_games"
-            print ">"
-            puts Review.top_three_games
-            sleep 2
-            whats_next       
+            whats_next      
         when answer == "game_by_type"
             puts "What Type of Game Would You Like?"
             puts "(ex: Card Game, Board Game, RPG Game"
@@ -98,19 +98,23 @@ def game_menu
             puts Game.list_of_all_games
             sleep 2
             whats_next 
-        when answer == "best_to_worst"
-            print ">"    
-            puts Review.best_to_worst
-            sleep 2 
+        when answer == "my_games"
+            print ">"
+            puts $player.find_my_games
+            sleep 2
             whats_next
         when answer == "delete_all_my_games" 
             print ">"
             $player.delete_my_games
+            sleep 2
             whats_next 
     end
 end   
 
+
+#####
 def whats_next
+    #DONE
     answer = $prompt.select("Do you want to:", %w(main_menu exit))
     case 
         when answer == "main_menu"
