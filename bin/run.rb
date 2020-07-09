@@ -1,9 +1,6 @@
 require_relative '../config/environment'
 ActiveRecord::Base.logger = nil
-# names
-# House Rule 
-  
- 
+   
 # main menu: what would you like to do? (whos turn is it?)
 
 #     my reviews
@@ -58,4 +55,5 @@ game_intro()
 player_info()
 main_menu()    
 
-puts "HELLO WORLD"
+
+"HELLO WORLD"

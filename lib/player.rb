@@ -19,6 +19,10 @@ class Player < ActiveRecord::Base
         Review.create(player_id: self.id, game_id: game_id, player_review: review, rating: rate)
     end  
 
+    def delete_review
+
+    end
+    
     def update_review
         
     end    
