@@ -7,10 +7,10 @@ Player.delete_all
 Review.delete_all
 
 
-catan = Game.create(id: 1, name: "Catan", game_type: "Board")
-monopoly = Game.create(id: 2, name: "Monopoly", game_type: "Board")
-pandemic = Game.create(id: 3, name: "Pandemic", game_type: "Board")
-dominion = Game.create(id: 4, name: "Dominion", game_type: "Board")
+catan = Game.create(id: 1, name: "Catan", game_type: "Board Game")
+monopoly = Game.create(id: 2, name: "Monopoly", game_type: "Board Game")
+pandemic = Game.create(id: 3, name: "Pandemic", game_type: "Board Game")
+dominion = Game.create(id: 4, name: "Dominion", game_type: "Board Game")
 fluxx = Game.create(id: 5, name: "Fluxx", game_type: "Card Game")
 go_fish = Game.create(id: 6, name: "Go Fish", game_type: "Card Game")
 nuts = Game.create(id: 7, name: "Nuts!", game_type: "Card Game")
@@ -40,7 +40,7 @@ review11 = Review.create(id: 11, player_id: 3, game_id: 8, player_review: "Too m
 review12 = Review.create(id: 12, player_id: 6, game_id: 3, player_review: "If anxiety was a game it would be this. Friends love it but it gets too real for me.", rating: 3)
 
 
-binding.pry
+# binding.pry
 
 
 puts "hello"
