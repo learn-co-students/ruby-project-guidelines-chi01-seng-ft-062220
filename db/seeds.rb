@@ -1,6 +1,6 @@
 require_relative '../config/environment'
 require 'pry'
-# require_all 'lib'
+
 
 Film.destroy_all
 Type.destroy_all
@@ -20,6 +20,7 @@ def creator
             character_info << Film.find_film_titles(get_id(info["films"][0])) #this will only return the title for the very first film in the array
             name_species_film << character_info
         end
+
         all_species = name_species_film.collect {|element| element[1]}.uniq
         all_films = name_species_film.collect {|element| element[2]}.uniq
         
@@ -37,7 +38,7 @@ def creator
                 type_info = element[0][:type_id]
                 end
             end
-            film_info = film_instances.find do |info|
+            film_instances.find do |info|
                 if element[2] == info[:title]
                 element[0][:film_id] = info[:id]
                 film_info = element[0][:film_id]
@@ -48,7 +49,7 @@ def creator
     connected.first(10)
 end
 
-creator
+# creator
 
 
 # binding.pry

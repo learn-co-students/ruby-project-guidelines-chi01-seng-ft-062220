@@ -8,5 +8,9 @@ class Person < ActiveRecord::Base
         people
     end    
     
+    # eye_color
+    # hair_color
+    # gender
+    # age
 end
 

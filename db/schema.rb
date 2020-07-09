@@ -10,20 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_07_180122) do
-
-  create_table "films", force: :cascade do |t|
-    t.string "title"
-  end
-
-  create_table "people", force: :cascade do |t|
-    t.string "name"
-    t.integer "type_id"
-    t.integer "film_id"
-  end
-
-  create_table "types", force: :cascade do |t|
-    t.string "name"
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end
