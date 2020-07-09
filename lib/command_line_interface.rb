@@ -43,21 +43,27 @@ def main_menu
 end
 
 # def review_menu
-#     answer = prompt.select()
+#     answer = $prompt.select()
 #     case 
-#         when
+#         when answer == "my_review"
         
-#         when
+#         when answer == "delete_reviews"
+
+        # when answer == "update_review"
     
 #     end            
 # end
 
 # def game_menu
-#     answer = prompt.select()
+#     answer = $prompt.select()
 #     case 
-#         when
-        
-#         when
-    
+#         when answer == "top_game"
+        # when answer == "top_three_games"
+        # when answer == "game_by_type"
+#         when answer == "all_of_the_games"
+            #Game.list_of_all_games
+
+            ##more options main_menu or exit
+        # when answer == "delete_all_my_games"  
 #     end
 # end    
