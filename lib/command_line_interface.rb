@@ -6,7 +6,7 @@ $pastel = Pastel.new
 def game_intro
    puts $pastel.green($font.write("Welcome to")) 
    puts $pastel.blue($font.write("House Rules"))
-   sleep 2
+   #sleep 2
 end
 
 def player_info
@@ -18,14 +18,14 @@ def player_info
                 name = gets.chomp
                 $player = Player.all.find {|player| player.name == name}
                 puts "Hey #{$player.name} nice to see you again!"
-                sleep 1
+                #sleep 1
             when answer == "new_player"
                 puts "What is your name?"
                 print ">"
                 name = gets.chomp
                 $player = Player.create(name: name)
                 puts "Hello #{$player.name} thank you for joining us!"
-                sleep 1
+                #sleep 1
         end            
 end    
 
@@ -52,28 +52,44 @@ def main_menu
 end
 
 def review_menu
-    answer = $prompt.select("Do You Want To:", %w(my_review delete-reviews update_review game_review))
+    answer = $prompt.select("Do You Want To:", %w(write_review my_review delete_review update_review))
     case 
+        when answer == "write_review"
+            puts "What Is The Game?"
+            print ">"
+            game = gets.chomp
+            puts "What Is The Review?"
+            print ">"
+            review = gets.chomp
+            puts "What Is The Rating?"
+            rate = gets.chomp
+            print ">"
+            $player.write_review(game, review, rate)
+            sleep 2
+            whats_next
         when answer == "my_review"
             print ">"
             puts $player.my_reviews
             sleep 2
             whats_next    
-        # when answer == "delete_reviews"
-        #     print ">"
-        #     puts $player.
-        #     whats_next
-        # when answer == "update_review"
-        #     print ">"
-        #     puts 
-        #     whats_next
-        # when answer == "game_review"
-        #     puts "What game?"
-        #     print ">"
-        #     game_name = gets.chomp
-        #     puts game_name.game_review
-        #     sleep 2 
-        #     whats_next
+        when answer == "delete_review"
+            puts "What Game Review Would You Like To Delete?"
+            print ">"
+            game = gets.chomp
+            $player.delete_review(game)
+            whats_next
+        when answer == "update_review"
+            puts "What Review Would You Like To Update?"
+            print ">"
+            game = gets.chomp
+            puts "What Is The New Review?"
+            print ">"
+            review = gets.chomp
+            puts "What Is The Rating?"
+            rate = gets.chomp
+            print ">"
+            $player.update_review(game, review, rate)
+            whats_next
     end            
 end
 
@@ -111,10 +127,7 @@ def game_menu
     end
 end   
 
-
-#####
 def whats_next
-    #DONE
     answer = $prompt.select("Do you want to:", %w(main_menu exit))
     case 
         when answer == "main_menu"
@@ -128,7 +141,7 @@ def whats_next
 end    
 
 # def credits
-#     "creators: Haley Farro and Eve Reichmann"
+#     "creators: Haley Ferro and Eve Reichmann"
 #     "Mod 1 Flatiron Ruby Project"
 #     "Thanks All!"
 # end     

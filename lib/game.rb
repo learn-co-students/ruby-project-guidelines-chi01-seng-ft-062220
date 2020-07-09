@@ -18,7 +18,4 @@ class Game < ActiveRecord::Base
         end    
     end 
     
-    def game_review
-        self.reviews
-    end
 end
