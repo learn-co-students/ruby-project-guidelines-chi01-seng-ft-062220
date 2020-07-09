@@ -19,12 +19,16 @@ class Player < ActiveRecord::Base
         Review.create(player_id: self.id, game_id: game_id, player_review: review, rating: rate)
     end  
 
-    def delete_review
-
+    def delete_review(game)
+        game_review = self.games.find_by(name: game)
+        game_review.destroy
+        puts "Removed."
     end
     
-    def update_review
-        
+    def update_review(game, review, rate)
+        game_review = self.reviews.find_by(game_id: game)
+        game_review.update(player_review: review, rating: rate)
+        puts "Updated!"
     end    
 end
 
