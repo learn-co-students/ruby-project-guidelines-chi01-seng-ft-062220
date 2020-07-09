@@ -20,7 +20,7 @@ class Player < ActiveRecord::Base
     end  
 
     def delete_review(game)
-        game_review = self.games.find_by(name: game)
+        game_review = self.reviews.find_by(game_id: game)
         game_review.destroy
         puts "Removed!"
     end
