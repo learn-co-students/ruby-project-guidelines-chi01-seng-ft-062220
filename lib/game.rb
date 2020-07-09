@@ -11,4 +11,10 @@ class Game < ActiveRecord::Base
     def self.random_game
         self.all.sample
     end
+
+    def self.list_of_all_games
+        self.all.map do |key|
+            key.name
+        end    
+    end    
 end
