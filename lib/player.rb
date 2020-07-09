@@ -12,7 +12,7 @@ class Player < ActiveRecord::Base
 
     def delete_my_games
         self.games.destroy_all
-        puts "cleared the board"
+        puts "Cleared the board!"
     end
 
     def write_review(game_id, review, rate)
@@ -22,7 +22,7 @@ class Player < ActiveRecord::Base
     def delete_review(game)
         game_review = self.games.find_by(name: game)
         game_review.destroy
-        puts "Removed."
+        puts "Removed!"
     end
     
     def update_review(game, review, rate)
