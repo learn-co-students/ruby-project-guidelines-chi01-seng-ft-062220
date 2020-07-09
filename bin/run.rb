@@ -55,7 +55,7 @@ ActiveRecord::Base.logger = nil
         
 #     '
 game_intro()
-# player_info()
+player_info()
 main_menu()    
 
 puts "HELLO WORLD"
