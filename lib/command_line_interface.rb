@@ -30,13 +30,34 @@ def main_menu
         case
         when answer == "Reviews"
             print ">"
+            review_menu
         when answer == "Games"
             print ">"
+            game_menu
         when answer == "Suprise_me!"
             print ">"
             puts Game.random_game.name
         when answer == "Exit"
             puts "Thanks for seeing you! Please come again!"
-            print ">"
         end            
 end
+
+# def review_menu
+#     answer = prompt.select()
+#     case 
+#         when
+        
+#         when
+    
+#     end            
+# end
+
+# def game_menu
+#     answer = prompt.select()
+#     case 
+#         when
+        
+#         when
+    
+#     end
+# end    
