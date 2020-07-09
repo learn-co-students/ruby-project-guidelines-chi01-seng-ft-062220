@@ -3,13 +3,7 @@ ActiveRecord::Base.logger = nil
 # names
 # House Rule 
   
-
-# welcome! Let''s setup.
-#     existing player
-#         find player == name
-#     new player
-#         player.new
-
+ 
 # main menu: what would you like to do? (whos turn is it?)
 
 #     my reviews
@@ -60,7 +54,8 @@ ActiveRecord::Base.logger = nil
 #         automatically puts you back in main menu?
         
 #     '
-
-welcome()    
+game_intro()
+player_info()
+main_menu()    
 
 puts "HELLO WORLD"
