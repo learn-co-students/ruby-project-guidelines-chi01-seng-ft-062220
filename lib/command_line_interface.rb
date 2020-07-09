@@ -7,15 +7,15 @@ def game_intro
 end
 
 def player_info
-    answer = $prompt.select("are you a", %w(Current_Player New_Player))
+    answer = $prompt.select("Are You a:", %w(current_player new_player))
         case
-            when answer == "Current_Player"
-                puts "What is your name?"
+            when answer == "current_player"
+                puts "What is Your Name?"
                 print ">"
                 name = gets.chomp
                 player = Player.all.find {|player| player.name == name}
                 puts "Hey #{player.name} nice to see you again!"
-            when answer == "New_Player"
+            when answer == "new_player"
                 puts "What is your name?"
                 print ">"
                 name = gets.chomp
@@ -25,20 +25,23 @@ def player_info
 end    
 
 def main_menu
-        answer = $prompt.select("How can I help you?", %w(Reviews Games 
-        Suprise_me! Exit))
+        answer = $prompt.select("How Can I Help You?", %w(reviews games 
+        suprise_me! exit))
         case
-        when answer == "Reviews"
+        when answer == "reviews"
             print ">"
             review_menu
-        when answer == "Games"
+        when answer == "games"
             print ">"
             game_menu
-        when answer == "Suprise_me!"
+        when answer == "suprise_me!"
             print ">"
             puts Game.random_game.name
-        when answer == "Exit"
-            puts "Thanks for seeing you! Please come again!"
+            sleep 3 
+            whats_next
+        when answer == "exit"
+            puts "Thanks #{player.name} for seeing you! Please come again!"
+            sleep 5
         end            
 end
 
@@ -46,11 +49,11 @@ end
 #     answer = $prompt.select()
 #     case 
 #         when answer == "my_review"
-        
+            #whats_next    
 #         when answer == "delete_reviews"
-
+            #whats_next
         # when answer == "update_review"
-    
+            #whats_next
 #     end            
 # end
 
@@ -58,12 +61,33 @@ end
 #     answer = $prompt.select()
 #     case 
 #         when answer == "top_game"
+            #whats_next
         # when answer == "top_three_games"
+            #whats_next       
         # when answer == "game_by_type"
+            #whats_next
 #         when answer == "all_of_the_games"
             #Game.list_of_all_games
-
-            ##more options main_menu or exit
-        # when answer == "delete_all_my_games"  
+            #whats_next 
+        # when answer == "delete_all_my_games" 
+            #whats_next 
 #     end
-# end    
+# end   
+
+def whats_next
+    answer = $prompt.select("Do you want to:", %w(main_menu exit))
+    case 
+        when answer == "main_menu"
+            puts ">"
+            main_menu
+        when answer == "exit"
+            puts "Thanks #{player.name} for seeing you! Please come again!"
+            sleep 5
+    end        
+end    
+
+# def credits
+#     "creators: Haley Farro and Eve Reichmann"
+#     "Mod 1 Flatiron Ruby Project"
+#     "Thanks All!"
+# end     
